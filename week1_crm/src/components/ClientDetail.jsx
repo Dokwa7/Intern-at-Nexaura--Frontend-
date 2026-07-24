@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-export default function ClientDetail({clients, selectedClientId, onAddMilestone}) {
+export default function ClientDetail({clients, selectedClientId, onAddMilestone, isAdmin}) {
     const [milestoneName, setMilestoneName] = useState('');
     const [milestoneDate, setMilestoneDate] = useState('');
 
@@ -47,21 +47,22 @@ export default function ClientDetail({clients, selectedClientId, onAddMilestone}
                 </ul>
             )}
 
-            <form onSubmit={handleAddMilestone}>
-                <input 
-                    type="text"
-                    placeholder="Milestone Name"
-                    value={milestoneName}
-                    onChange={(e) => setMilestoneName(e.target.value)}
-                />
-                <input
-                    type="date"
-                    value={milestoneDate}
-                    onChange={(e) => setMilestoneDate(e.target.value)}
-                />
-                <button type="submit">Add Milestone</button>
-            </form>
-
+            {isAdmin && (
+                <form onSubmit={handleAddMilestone}>
+                    <input 
+                        type="text"
+                        placeholder="Milestone Name"
+                        value={milestoneName}
+                        onChange={(e) => setMilestoneName(e.target.value)}
+                    />
+                    <input
+                        type="date"
+                        value={milestoneDate}
+                        onChange={(e) => setMilestoneDate(e.target.value)}
+                    />
+                    <button type="submit">Add Milestone</button>
+                </form>
+            )}
         </div>
     );
 }

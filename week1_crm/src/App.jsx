@@ -7,6 +7,7 @@ export default function App() {
   const [expenses, setExpenses] = useState([]);
   const [clients, setClients] = useState([]);
   const [currentPage, setCurrentPage] = useState('clients');
+  const [isAdmin, setIsAdmin] = useState(true);
 
   const addExpenses = (newExpense) => {
     setExpenses([...expenses, newExpense]);
@@ -35,14 +36,21 @@ export default function App() {
         <button onClick={() => setCurrentPage('expenses')} >Expenses</button>
         <button onClick={() => setCurrentPage('clients')} >Clients</button>
         <button onClick={() => setCurrentPage('shares')} >Partner Share</button>
+
+        <button onClick={() => setIsAdmin(!isAdmin)}>
+          Switch to {isAdmin ? 'User' : 'Admin'}View
+        </button>
+        <span> Current role: {isAdmin ? 'User' : 'Admin'}</span>
+
       </nav>
 
+
       {currentPage === 'expenses' && (
-        <ExpensePage expenses={expenses} onAdd={addExpenses} />
+        <ExpensePage expenses={expenses} onAdd={addExpenses} isAdmin={isAdmin} />
       )}
 
       {currentPage === 'clients' && (
-        <ClientsPage clients={clients} onAddClients={addClients} onAddMilestone={addMilestone} />
+        <ClientsPage clients={clients} onAddClients={addClients} onAddMilestone={addMilestone} isAdmin={isAdmin} />
       )}
 
       {currentPage === 'shares' && (
