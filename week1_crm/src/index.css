@@ -1,14 +1,15 @@
 :root {
   --color-bg: rgb(255, 246, 235);
-  --color-surface: #c9b1e1;
-  --color-border: #b3e5dd;
+  --color-surface: #DEAFC2;
+  --color-border: #788e8a;
   --color-text: #2e4243;
-  --color-text-muted: #CAFFD0;
-  --color-headings: #021430;
-  --color-primary: #DEAFC2;
+  --color-muted: #0f6100;
+  --color-headings: #0f6100;
+  --color-primary: #30223e;
   --color-primary-hover: #7FB7CB;
   --color-danger: #c4453d;
-  --color-success: #2f9e5a;
+  --color-success: #8cbab2;
+  --color-list: #e2f8f4;
 
   --space-xxs: 2px;
   --space-xs: 4px;
@@ -40,6 +41,21 @@ h1, h2, h3 {
   color: var(--color-headings);
 }
 
+h1 {
+  position: sticky;
+  top: 0;
+  background-color: rgb(255, 246, 235);
+  border-bottom: var(--space-xs) double var(--color-border); 
+}
+
 p{
   color: var(--color-text);
+}
+
+h4, h5 {
+  color: var(--color-primary);
+}
+
+h6 {
+  color: var(--color-success);
 }

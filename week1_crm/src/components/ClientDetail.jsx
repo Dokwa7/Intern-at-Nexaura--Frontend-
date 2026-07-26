@@ -29,15 +29,33 @@ export default function ClientDetail({clients, selectedClientId, onAddMilestone,
 
     return (
         <div>
-            <h3>Detalis of: {client.name}</h3>
+            <h3>Details of: {client.name}</h3>
             <p>Project: {client.projectName}</p>
             <p>Timeline: {client.startDate} to {client.timelineEnd}</p>
             <p>Cost: Rs. {client.totalCost}</p>
             <p>Status: {client.status}</p>
 
-            <h3>Add Milestone</h3>
+            <h3>Milestones</h3>
+            {client.milestone.length === 0 ? (
+                <p>No milestone added yet.</p>
+            ) : (
+                <ul>
+                    {client.milestone.map((m) => (
+                        <li key={m.id}>
+                            {/* {m.name} | due {m.dueDate} | {m.status} */}
+                            <div className='milestone-list'>
+                                <p>{m.name} <p>{m.dueDate} </p> </p>
+                                <p>{m.status}</p>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+
             {isAdmin && (
                 <form onSubmit={handleAddMilestone}>
+                    <h3>Add Milestone</h3>
                     <input 
                         type="text"
                         placeholder="Milestone Name"
@@ -53,18 +71,7 @@ export default function ClientDetail({clients, selectedClientId, onAddMilestone,
                 </form>
             )}
 
-            <h3>Milestones</h3>
-            {client.milestone.length === 0 ? (
-                <p>No milestone added yet.</p>
-            ) : (
-                <ul>
-                    {client.milestone.map((m) => (
-                        <li key={m.id}>
-                            {m.name} | due {m.dueDate} | {m.status}
-                        </li>
-                    ))}
-                </ul>
-            )}
+            
 
         </div>
     );

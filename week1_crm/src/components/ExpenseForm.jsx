@@ -25,6 +25,7 @@ export default function ExpenseForm({onAdd}) {
 
     return(
         <form onSubmit={handleSubmit}>
+            <h3>Add New Expense</h3>
             <input
                 type="nunmber"
                 placeholder="Amount"

@@ -41,7 +41,7 @@ export default function App() {
         <button onClick={() => setIsAdmin(!isAdmin)}>
           Switch to {isAdmin ? 'User' : 'Admin'}View
         </button>
-        <span> Current role: {isAdmin ? 'User' : 'Admin'}</span>
+        <span> Current role: {isAdmin ? 'Admin' : 'User'}</span>
 
       </nav>
 

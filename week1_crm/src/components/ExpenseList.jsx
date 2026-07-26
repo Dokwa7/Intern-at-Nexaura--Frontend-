@@ -11,7 +11,11 @@ export default function ExpenseList({expenses}) {
             <ul>
                 {expenses.map((expenses) => (
                     <li key={expenses.id}>
-                        {expenses.date} : {expenses.description} - Rs. {expenses.amount}
+                        {/* {expenses.date} : {expenses.description} - Rs. {expenses.amount} */}
+                        <div className='expense-list'>
+                            <p>{expenses.description} <p>{expenses.date} </p> </p>
+                            <p>Rs/- {expenses.amount} </p>
+                        </div>
                     </li>
                 ))}
             </ul>

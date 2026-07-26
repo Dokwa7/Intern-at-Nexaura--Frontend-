@@ -11,19 +11,22 @@ export default function ClientsPage({clients, onAddClients, onAddMilestone, isAd
             <h1>Clients</h1>
             <div className='inner-container'>
                 <div className='left-side-content'>
-                    {isAdmin && <ClientForm onAdd={onAddClients} />}
                     <ClientList clients={clients} onSelect={setSelectedClientId} />
+                    {isAdmin && <ClientForm onAdd={onAddClients} />}
                 </div>
                 
-                    <div className='right-side-content' >
-                        <h3>Client Details</h3>
+                <div className='right-side-content'>
+                    {selectedClientId ? (
                         <ClientDetail
                             clients={clients}
                             selectedClientId={selectedClientId}
                             onAddMilestone={onAddMilestone}
                             isAdmin={isAdmin}
                         />
-                    </div>
+                    ) : (
+                        <h3>Client Details</h3>
+                    )}
+                </div>
             </div>
         </div>
     );

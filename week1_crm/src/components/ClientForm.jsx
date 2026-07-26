@@ -35,8 +35,8 @@ export default function ClientForm({onAdd}) {
 
     return (
         <div>
-        <h3>Add New Client</h3>
         <form onSubmit={handleSubmit}>
+            <h3>Add New Client</h3>
             <input
                 type="text"
                 placeholder="Client Name"
