@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import '../components.css';
 
 export default function ClientForm({onAdd}) {
     const [name, setName] = useState('');
@@ -33,6 +34,8 @@ export default function ClientForm({onAdd}) {
     };
 
     return (
+        <div>
+        <h3>Add New Client</h3>
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
@@ -69,5 +72,6 @@ export default function ClientForm({onAdd}) {
             </select>
             <button type="submit">Add Client</button>
         </form>
+        </div>
     );
 }

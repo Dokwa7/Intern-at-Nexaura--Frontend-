@@ -2,6 +2,7 @@ import {useState} from 'react';
 import ClientsPage from './pages/ClientsPage';
 import ExpensePage from './pages/ExpensePage';
 import PartnerShare from './pages/PartnerShare';
+import './App.css';
 
 export default function App() {
   const [expenses, setExpenses] = useState([]);

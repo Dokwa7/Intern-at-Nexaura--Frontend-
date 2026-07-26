@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import '../components.css';
 
 export default function ExpenseForm({onAdd}) {
     const [amount, setAmount] = useState('');

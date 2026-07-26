@@ -1,0 +1,36 @@
+.clients-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.clients-page h1{
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 246, 235);
+    border-bottom: var(--space-sm) double var(--color-border);
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2%;
+}
+
+.left-side-content{
+    flex: 1;
+    min-width: 0;
+    border: var(--space-xxs) solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 5%;
+    margin: 1%;
+}
+
+.right-side-content{
+    flex: 1.5;
+    border: var(--space-xxs) solid var(--color-border);
+    border-radius: var(--radius);
+    min-width: 0;
+    padding: 5%;
+    margin: 1%;
+}

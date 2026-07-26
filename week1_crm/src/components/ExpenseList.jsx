@@ -1,3 +1,5 @@
+import '../components.css';
+
 export default function ExpenseList({expenses}) {
     const total = expenses.reduce((sum, expenses) => sum + expenses.amount, 0);
     if (expenses.length === 0){

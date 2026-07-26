@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import '../components.css';
 
 export default function ClientDetail({clients, selectedClientId, onAddMilestone, isAdmin}) {
     const [milestoneName, setMilestoneName] = useState('');
@@ -28,25 +29,13 @@ export default function ClientDetail({clients, selectedClientId, onAddMilestone,
 
     return (
         <div>
-            <h2>{client.name}</h2>
+            <h3>Detalis of: {client.name}</h3>
             <p>Project: {client.projectName}</p>
             <p>Timeline: {client.startDate} to {client.timelineEnd}</p>
             <p>Cost: Rs. {client.totalCost}</p>
             <p>Status: {client.status}</p>
 
-            <h3>milestones</h3>
-            {client.milestone.length === 0 ? (
-                <p>No milestone added yet.</p>
-            ) : (
-                <ul>
-                    {client.milestone.map((m) => (
-                        <li key={m.id}>
-                            {m.name} | due {m.dueDate} | {m.status}
-                        </li>
-                    ))}
-                </ul>
-            )}
-
+            <h3>Add Milestone</h3>
             {isAdmin && (
                 <form onSubmit={handleAddMilestone}>
                     <input 
@@ -63,6 +52,20 @@ export default function ClientDetail({clients, selectedClientId, onAddMilestone,
                     <button type="submit">Add Milestone</button>
                 </form>
             )}
+
+            <h3>Milestones</h3>
+            {client.milestone.length === 0 ? (
+                <p>No milestone added yet.</p>
+            ) : (
+                <ul>
+                    {client.milestone.map((m) => (
+                        <li key={m.id}>
+                            {m.name} | due {m.dueDate} | {m.status}
+                        </li>
+                    ))}
+                </ul>
+            )}
+
         </div>
     );
 }

@@ -1,0 +1,67 @@
+/* Buttons */
+button {
+  font-family: var(--font-main);
+}
+
+button[type="submit"] {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button[type="submit"]:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 400px;
+  margin-bottom: var(--space-lg);
+  background: var(--color-surface);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+input, select {
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: var(--font-main);
+}
+
+/* Lists (Expenses, Clients) */
+ul {
+  list-style: none;
+}
+
+ul li {
+  background: var(--color-surface);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-xs);
+  cursor: pointer;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-all;  
+}
+
+ul li:hover {
+  border-color: var(--color-primary);
+}
+
+/* Partner Share cards */
+.page-container > div > div {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
