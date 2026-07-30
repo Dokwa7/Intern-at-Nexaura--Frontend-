@@ -8,6 +8,7 @@ export default function ClientList({clients, onSelect, selectedClientId}) {
         return <p>No Clients Yet</p>
     }
 
+    
     return (
         <div>
             <h3>Clients</h3>
