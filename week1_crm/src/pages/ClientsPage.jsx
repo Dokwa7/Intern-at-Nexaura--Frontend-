@@ -11,7 +11,7 @@ export default function ClientsPage({clients, onAddClients, onAddMilestone, isAd
             <h1>Clients</h1>
             <div className='inner-container'>
                 <div className='left-side-content'>
-                    <ClientList clients={clients} onSelect={setSelectedClientId} />
+                    <ClientList clients={clients} onSelect={setSelectedClientId} selectedClientId={selectedClientId} />
                     {isAdmin && <ClientForm onAdd={onAddClients} />}
                 </div>
                 
@@ -24,7 +24,7 @@ export default function ClientsPage({clients, onAddClients, onAddMilestone, isAd
                             isAdmin={isAdmin}
                         />
                     ) : (
-                        <h3>Client Details</h3>
+                        <p className="empty-state">Select a client to see their details</p>
                     )}
                 </div>
             </div>

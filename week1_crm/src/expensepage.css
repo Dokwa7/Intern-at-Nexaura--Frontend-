@@ -1,0 +1,20 @@
+.expenses-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.expenses-layout {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+
+.expenses-layout form {
+  flex: 0 0 280px;
+}
+
+.expenses-layout > div:last-child {
+  flex: 1;
+  min-width: 0;
+}

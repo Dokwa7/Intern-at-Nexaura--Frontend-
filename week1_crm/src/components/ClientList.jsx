@@ -1,6 +1,6 @@
 import '../components.css';
 
-export default function ClientList({clients, onSelect}) {
+export default function ClientList({clients, onSelect, selectedClientId}) {
 
     console.log('ClientList received:', clients, 'length:', clients.length);
     
@@ -14,8 +14,7 @@ export default function ClientList({clients, onSelect}) {
             <ul>
                 {clients.map((c) => {
                     return (
-                        <li key={c.id} onClick={() => onSelect(c.id)}>
-                            {/* {c.name} | {c.projectName} | Rs. {c.totalCost} | {c.status} */}
+                        <li key={c.id} onClick={() => onSelect(c.id)} className={c.id === selectedClientId ? 'selected' : ''} >
                             <div className='client-list'>
                                 <p>{c.name} <h5>{c.projectName}</h5></p>
                                 <p> Rs/- {c.totalCost} <h6>{c.status}</h6></p>

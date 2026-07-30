@@ -1,15 +1,20 @@
 :root {
-  --color-bg: rgb(255, 246, 235);
-  --color-surface: #DEAFC2;
-  --color-border: #788e8a;
-  --color-text: #2e4243;
-  --color-muted: #0f6100;
-  --color-headings: #0f6100;
-  --color-primary: #30223e;
-  --color-primary-hover: #7FB7CB;
-  --color-danger: #c4453d;
-  --color-success: #8cbab2;
-  --color-list: #e2f8f4;
+  --color-bg: #0d0714;
+  --color-surface: #16011c;
+  --color-surface-raised: #24012c;
+  --color-border: #f755d4;
+  --color-border-soft: #a678d2;
+  --color-text: #f5f0ff;
+  --color-headings: #f8e585;
+  --color-subtext: #ff6ec7;
+  --color-primary: #0c0111;
+  --color-primary-hover: #4a3563;
+  --color-danger: #ff5c7a;
+  --color-success: #7ee9c9;
+  --color-list: #201430;
+
+  --glow-sm: 0 0 6px rgba(220, 247, 85, 0.35);
+  --glow-md: 0 0 14px rgba(85, 247, 223, 0.45);
 
   --space-xxs: 2px;
   --space-xs: 4px;
@@ -18,7 +23,7 @@
   --space-lg: 24px;
   --space-xl: 40px;
 
-  --radius: 8px;
+  --radius: 10px;
   --font-main: 'Segoe UI', system-ui, sans-serif;
 }
 
@@ -32,7 +37,7 @@ body {
   font-family: var(--font-main);
   background: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 h1, h2, h3 {
@@ -41,19 +46,12 @@ h1, h2, h3 {
   color: var(--color-headings);
 }
 
-h1 {
-  position: sticky;
-  top: 0;
-  background-color: rgb(255, 246, 235);
-  border-bottom: var(--space-xs) double var(--color-border); 
-}
-
-p{
+p {
   color: var(--color-text);
 }
 
 h4, h5 {
-  color: var(--color-primary);
+  color: var(--color-subtext);
 }
 
 h6 {

@@ -16,12 +16,21 @@ function PartnerShare({expenses, clients}) {
         <div className="page-container">
             <h1>PartnerShares</h1>
 
-            <div className="partner-share-total">
-                <h2>Total Revenue: ${totalRevenue.toFixed(2)}</h2>
-                <h2>Total Expenses: ${totalExpenses.toFixed(2)}</h2>
-                <h2>Net Profit: ${netProfit.toFixed(2)}</h2>
+            <div className="stat-cards">
+                <div className="stat-card">
+                    <span className="stat-label">Total Revenue</span>
+                    <span className="stat-value">${totalRevenue.toFixed(2)}</span>
+                </div>
+                <div className="stat-card">
+                    <span className="stat-label">Total Expenses</span>
+                    <span className="stat-value">${totalExpenses.toFixed(2)}</span>
+                </div>
+                <div className="stat-card">
+                    <span className="stat-label">Net Profit</span>
+                    <span className="stat-value">${netProfit.toFixed(2)}</span>
+                </div>
             </div>
-            <br></br>
+
             <div className="parts">
             {partners.map((p) => (
                 <div key={p.name} className="partner-list">
@@ -30,6 +39,7 @@ function PartnerShare({expenses, clients}) {
                 </div>
             ))}
             </div>
+            
         </div>
     );
 

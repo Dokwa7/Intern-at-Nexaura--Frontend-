@@ -44,7 +44,7 @@ export default function ClientDetail({clients, selectedClientId, onAddMilestone,
                         <li key={m.id}>
                             {/* {m.name} | due {m.dueDate} | {m.status} */}
                             <div className='milestone-list'>
-                                <p>{m.name} <p>{m.dueDate} </p> </p>
+                                <p>{m.name} <p>{m.date} </p> </p>
                                 <p>{m.status}</p>
                             </div>
                         </li>
