@@ -19,7 +19,6 @@ function Header() {
         <span className="eyebrow">{profile.role}</span>
         <h1 className="hero-title">
           {profile.heroLine1}
-          <br />
           {profile.heroLine2}
         </h1>
       </div>
