@@ -1,0 +1,89 @@
+.header {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+}
+
+.nav-mark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--accent-rose);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-muted);
+}
+
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem 6rem;
+  text-align: left;
+}
+
+.hero-avatar {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 2rem;
+}
+
+.hero-avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-image: url('../../assets/Clove(4).png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: 50% 80%; 
+  animation: flutter 3.5s ease-in-out infinite;  color: var(--bg);
+}
+
+@keyframes flutter {
+  0%   { transform: rotate(-4deg) translateY(0); }
+  25%  { transform: rotate(3deg) translateY(-3px); }
+  50%  { transform: rotate(-2deg) translateY(0); }
+  75%  { transform: rotate(4deg) translateY(-2px); }
+  100% { transform: rotate(-4deg) translateY(0); }
+}
+
+.hero-title {
+  font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+  line-height: 1.3;
+  font-weight: 500;
+  max-width: 14ch;
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    gap: 1.1rem;
+  }
+  .hero {
+    padding: 3.5rem 1.25rem 4.5rem;
+  }
+}
