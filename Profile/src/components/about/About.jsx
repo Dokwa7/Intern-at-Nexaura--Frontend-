@@ -18,11 +18,11 @@ function About() {
           </div>
         </div>
 
-        <div className="about-block">
-          <h3>Interests</h3>
-          <div className="badge-row">
+        <div className="interests-card">
+          <span className="interests-label">INTERESTS</span>
+          <div className="interests-list">
             {interests.map((interest) => (
-              <SkillBadge key={interest} label={interest} />
+              <span key={interest} className="interest-item">{interest}</span>
             ))}
           </div>
         </div>

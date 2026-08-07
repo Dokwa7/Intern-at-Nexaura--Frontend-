@@ -27,12 +27,60 @@
 }
 
 .skill-badge {
-  font-size: 0.85rem;
-  padding: 0.4rem 0.85rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  background-image: url('../../assets/SkillBadge.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 0 20px; /* keeps text off the petal edges */
+  font-size: 0.75rem;
+  line-height: 1.15;
   color: var(--text);
+  font-family: var(--font-body);
+
+  animation: sway 5s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+
+.interests-card {
+  position: relative;
   background: var(--bg-card);
+  border-radius: 16px;
+  padding: 2rem 2rem 2rem 4rem; /* extra left padding for the vertical label */
+  display: flex;
+  gap: 1.5rem;
+}
+
+.interests-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.15em;
+  font-family: var(--font-display);
+  color: var(--text-muted);
+  align-self: stretch;
+}
+
+.interests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.interest-item {
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
 }
 
 @media (max-width: 640px) {
