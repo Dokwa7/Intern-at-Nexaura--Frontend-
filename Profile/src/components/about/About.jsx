@@ -16,10 +16,20 @@ function About() {
               <SkillBadge key={skill} label={skill} />
             ))}
           </div>
+          <div>
+            <p className="about-poem">
+              Hannah my darling<br></br>
+              I will follow you into the sunrise under desert sky<br></br>
+              We fly, rise together<br></br>
+              With our hearts upon our sleeves for all to see<br></br>
+              We two will breathe, aqua queen though vast distance between us<br></br>
+              Heart sails with love for you<br></br>
+            </p>
+          </div>
         </div>
 
         <div className="interests-card">
-          <span className="interests-label">INTERESTS</span>
+          <span className="interests-label">Interests</span>
           <div className="interests-list">
             {interests.map((interest) => (
               <span key={interest} className="interest-item">{interest}</span>

@@ -1,14 +1,24 @@
 .about-bio {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  max-width: 60ch;
+  font-size: 2rem;
+  color: var(--text-mutedd );
+  max-width: 40ch;
   margin: 0 0 3rem 0;
+  margin-bottom: 9rem;
+  padding: 3rem;
+  text-wrap: balance;
 }
 
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
+  perspective: 800px;
+}
+
+.about-block {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
 }
 
 .about-block h3 {
@@ -20,10 +30,13 @@
   margin-bottom: 1rem;
 }
 
+
 .badge-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.6rem;
+  margin-bottom: 5rem;
 }
 
 .skill-badge {
@@ -45,43 +58,77 @@
   color: var(--text);
   font-family: var(--font-body);
 
-  animation: sway 5s ease-in-out infinite;
+  animation: sway 2s ease-in-out infinite;
 }
 
 @keyframes sway {
-  0%, 100% { transform: rotate(-2deg); }
-  50%      { transform: rotate(2deg); }
+  100% { transform: rotateZ(20deg); }
+  50%  { transform: rotateZ(-20deg); }
+  25%  { transform: rotateZ(10deg); }
+  0%   { transform: rotateZ(20deg); }
+  /* 100% { transform: rotate(12deg); }
+  50%  { transform: rotate(10deg); }
+  25%  { transform: rotate(9deg); } */
+}
+
+.about-poem {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--accent-rose);
+  letter-spacing: 0.02em;
+  margin: 0 0 0.75rem 0;
+  display: block;
 }
 
 .interests-card {
   position: relative;
   background: var(--bg-card);
   border-radius: 16px;
-  padding: 2rem 2rem 2rem 4rem; /* extra left padding for the vertical label */
+  padding: 1rem 1rem 1rem 2rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 5rem;
+  border: 20px solid transparent;
+  border-image: url('../../assets/Frame.png') 100 round;
+  transform-style: preserve-3d; /* keeps child content honoring the 3D flip instead of flattening */
+}
+
+.interests-card:hover {
+  animation: flip 1.2s ease-in-out 1;
+}
+
+@keyframes flip {
+  0%   { transform: rotate3d(1, 1, 0, 0deg); }
+  100% { transform: rotate3d(1, 1, 0, 360deg); }
 }
 
 .interests-label {
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  letter-spacing: 0.15em;
-  font-family: var(--font-display);
+  text-transform: uppercase;
+  text-orientation: upright;
   color: var(--text-muted);
-  align-self: stretch;
+  font-size: 1.7rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.9rem;
 }
 
 .interests-list {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  align-self: center;
+  line-height: 2.5;
 }
 
 .interest-item {
-  font-weight: 600;
-  color: var(--text);
+  font-weight: bolder;
+  color: var(--accent-gold);
+  font-size: 1.05rem;
+  font-style: Bold;
   text-align: right;
+  text-shadow: 1px 2.5px 2px var(--text);
 }
+
 
 @media (max-width: 640px) {
   .about-grid {
