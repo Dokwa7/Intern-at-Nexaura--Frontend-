@@ -3,7 +3,7 @@ export default function AnimeCard({ anime }) {
 
   return (
     <div className="anime-card">
-      <img src={posterImage?.medium} alt={canonicalTitle} />
+      <img src={posterImage?.tiny} alt={canonicalTitle} />
       <h3>{canonicalTitle}</h3>
       <p>{averageRating ?? 'N/A'}</p>
     </div>
