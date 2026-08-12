@@ -1,4 +1,4 @@
-import { bio, skills, interests } from "../../data/about";
+import { bio1, bio2, skills, interests } from "../../data/about";
 import SkillBadge from "./SkillBadge";
 import "./About.css";
 
@@ -6,7 +6,14 @@ function About() {
   return (
     <section id="about" className="about">
       <span className="eyebrow">A little about me</span>
-      <p className="about-bio">{bio}</p>
+      <div className="about-bio">
+        <p className="about-text-left">{bio1}</p>
+        <div className="about-portrait-wrapper">
+          <div className="about-portrait"></div>
+          <div className="about-portrait-thought-bubble"></div>
+        </div>
+        <p className="about-text-left">{bio2}</p>
+      </div>
 
       <div className="about-grid">
         <div className="about-block">

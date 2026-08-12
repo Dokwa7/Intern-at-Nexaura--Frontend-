@@ -1,11 +1,54 @@
 .about-bio {
-  font-size: 2rem;
-  color: var(--text-mutedd );
-  max-width: 40ch;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.about-portrait-wrapper {
+  position: relative;
+  
+}
+
+.about-portrait {
+  background-image: url('../../assets/portrait.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  width: 600px;
+  height: 500px;
+  margin: 0 20px 12px 0;
+  border-radius: 8px;
+  filter:
+    drop-shadow(3px 0 0 var(--bg-card-hover))
+    drop-shadow(-3px 0 0 var(--bg-card-hover))
+    drop-shadow(0 3px 0 var(--bg-card-hover))
+    drop-shadow(0 -3px 0 var(--bg-card-hover))
+    drop-shadow(2px 2px 0 var(--bg-card-hover))
+    drop-shadow(-2px -2px 0 var(--bg-card-hover))
+    drop-shadow(2px -2px 0 var(--bg-card-hover))
+    drop-shadow(-2px 2px 0 var(--bg-card-hover));
+  grid-column: 2;
+  grid-row: 1 / -1; /* spans both text blocks vertically */
+  border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%;
+  background-size: contain;
+}
+
+.about-text-left { grid-column: 1; }
+.about-text-right { grid-column: 3; }
+.about-text-right, .about-text-left {
+  font-size: 1rem;
+  color: var(--text);
+  max-width: 90ch;
   margin: 0 0 3rem 0;
   margin-bottom: 9rem;
   padding: 3rem;
   text-wrap: balance;
+  background: var(--accent-gold);
+  text-decoration: line-through;
 }
 
 .about-grid {
@@ -95,7 +138,7 @@
 }
 
 .interests-card:hover {
-  animation: flip 1.2s ease-in-out 1;
+  animation: flip 1.2s ease-in-out infinite;
 }
 
 @keyframes flip {
