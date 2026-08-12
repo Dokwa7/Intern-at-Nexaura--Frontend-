@@ -1,20 +1,35 @@
 :root {
-  --color-bg: #0d0714;
-  --color-surface: #16011c;
-  --color-surface-raised: #24012c;
-  --color-border: #f755d4;
-  --color-border-soft: #a678d2;
-  --color-text: #f5f0ff;
-  --color-headings: #f8e585;
-  --color-subtext: #ff6ec7;
-  --color-primary: #0c0111;
-  --color-primary-hover: #4a3563;
-  --color-danger: #ff5c7a;
-  --color-success: #7ee9c9;
-  --color-list: #201430;
+/* ===== SURFACES — unchanged, these are fine ===== */
+--color-bg: #0d0714;
+--color-surface: #320138;
+--color-surface-raised: #1f1626;
 
-  --glow-sm: 0 0 6px rgba(220, 247, 85, 0.35);
-  --glow-md: 0 0 14px rgba(85, 247, 223, 0.45);
+/* ===== TEXT — two levels, both neutral ===== */
+--color-text: #f5f0ff;
+--color-text-muted: #9d8fae;      /* was hot pink #ff6ec7 — subtext should recede, not compete with headings */
+
+/* ===== SIGNATURE ACCENT — pick ONE hue as "your" color, not four ===== */
+--color-accent: #f755d4;           /* your magenta — now reserved for active/selected states, primary buttons, links */
+--color-accent-soft: rgba(247, 85, 212, 0.14); /* tint for chip backgrounds, selected-row fill */
+--color-heading: #f8e585;          /* gold stays — this is your second signature hue, headings only */
+
+/* ===== BORDERS — quiet by default, loud only when it means something ===== */
+--color-border: rgba(245, 240, 255, 0.08);   /* default card/input border — nearly invisible */
+--color-border-strong: rgba(245, 240, 255, 0.18); /* hover state */
+--color-border-active: var(--color-accent);   /* ONLY the selected/focused card gets this */
+
+/* ===== BUTTONS — your old --color-primary was near-black, unusable as a CTA fill ===== */
+--color-btn-bg: #ae5989;
+--color-btn-text: #100119;
+--color-btn-hover: #bcb5ba;
+
+/* ===== STATUS — desaturated, so they read as INFO not decoration ===== */
+--color-success: #7ee9c9;   /* completed — kept, it's already calm */
+--color-warning: #e0b877;   /* on hold — muted amber, distinct from the bright heading gold */
+--color-danger: #ff5c7a;    /* kept — now actually distinguishable since subtext is no longer also pink */
+
+/* ===== GLOW — ONE glow, tied to your actual accent, used sparingly ===== */
+--glow-accent: 0 0 16px rgba(247, 85, 212, 0.35);
 
   --space-xxs: 2px;
   --space-xs: 4px;
@@ -36,7 +51,7 @@
 body {
   font-family: var(--font-main);
   background: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -51,7 +66,7 @@ p {
 }
 
 h4, h5 {
-  color: var(--color-subtext);
+  color: var(--color-text-muted);
 }
 
 h6 {

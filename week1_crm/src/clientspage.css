@@ -17,10 +17,9 @@
 .right-side-content {
   min-width: 0;
   background: var(--color-surface);
-  border: 1px solid var(--color-border-soft);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-md);
-  box-shadow: var(--glow-sm);
 }
 
 .left-side-content {
@@ -31,15 +30,14 @@
   flex: 1.5;
 }
 
-/* Selected client card gets a visible highlight */
 .left-side-content li.selected {
-  border-color: var(--color-border);
-  box-shadow: var(--glow-md);
+  border-color: var(--color-border-active);
+  box-shadow: var(--glow-accent);
   background: var(--color-surface-raised);
 }
 
 .right-side-content .empty-state {
-  color: var(--color-subtext);
+  color: var(--color-text-muted);
   font-style: italic;
   opacity: 0.7;
   padding: var(--space-lg) 0;
