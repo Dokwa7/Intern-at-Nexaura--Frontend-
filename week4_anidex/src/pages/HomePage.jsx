@@ -5,7 +5,7 @@ function HomePage() {
   const [animeList, setAnimeList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('naruto');
+  const [searchTerm, setSearchTerm] = useState('Erased');
 
   useEffect(() => {
     if (searchTerm.trim() === '') return;
@@ -35,13 +35,19 @@ function HomePage() {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search anime..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="search-input"
-      />
+      <div className="search-wrapper">
+        <svg className="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input
+          type="text"
+          placeholder="Search anime..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
+      </div>
 
       {loading && <p>Loading anime...</p>}
       {error && <p className="error">{error}</p>}

@@ -9,7 +9,9 @@ function AnimeCard({ anime }) {
   return (
     <div className="anime-card">
       <Link to={`/anime/${anime.id}`}>
-        <img src={posterImage?.medium} alt={canonicalTitle} />
+        <div className="anime-card-image-box">
+          <img src={posterImage?.small} alt={canonicalTitle} />
+        </div>
         <h3>{canonicalTitle}</h3>
       </Link>
       <p>{averageRating ?? 'N/A'}</p>
