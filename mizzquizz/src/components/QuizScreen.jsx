@@ -16,10 +16,10 @@ function QuizScreen({ questions, onFinish }) {
 
   const currentQuestion = questions[currentIndex];
 
-const allAnswers = useMemo(() => {
-  return [...currentQuestion.incorrect_answers, currentQuestion.correct_answer]
+  const allAnswers = useMemo(() => {
+    return [...currentQuestion.incorrect_answers, currentQuestion.correct_answer]
     .sort(() => Math.random() - 0.5);
-}, [currentIndex]);
+  }, [currentIndex]);
 
   // Reset the timer every time we move to a new question
   useEffect(() => {
@@ -43,6 +43,19 @@ const allAnswers = useMemo(() => {
       dispatch({ type: 'TIME_UP' });
     }
   }, [timeLeft, isAnswered]);
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+        if (isAnswered) return;
+        const num = parseInt(e.key);
+        if (num >= 1 && num <= allAnswers.length) {
+        handleAnswer(allAnswers[num - 1]);
+        }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+    }, [allAnswers, isAnswered]);
 
   const handleAnswer = (answer) => {
     if (isAnswered) return;
