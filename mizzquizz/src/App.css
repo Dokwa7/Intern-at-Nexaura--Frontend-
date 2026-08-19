@@ -260,3 +260,26 @@
   color: var(--accent-bg);
   cursor: pointer;
 }
+
+.results-screen {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.results-score {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 16px 0 4px;
+}
+
+.results-percentage {
+  font-size: 18px;
+  opacity: 0.7;
+  margin: 0 0 16px;
+}
+
+.results-message {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
