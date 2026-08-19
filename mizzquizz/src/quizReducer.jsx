@@ -17,6 +17,14 @@ export function quizReducer(state, action) {
       };
     }
 
+    case 'TIME_UP': {
+      return {
+        ...state,
+        selectedAnswer: null,
+        isAnswered: true,
+      };
+    }
+
     case 'NEXT_QUESTION': {
       return {
         ...state,
